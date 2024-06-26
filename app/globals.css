@@ -1,7 +1,7 @@
 :root {
   --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  --white: #fff;
-  --black: #000;
+  --white: #eee;
+  --black: #222831;
 }
 
 * {
@@ -28,6 +28,10 @@ body {
   background: var(--black);
 }
 
+.navbar h2 {
+  cursor: default;
+}
+
 .navbar a {
   color: var(--white);
 }
@@ -36,10 +40,12 @@ body {
 .guest button {
   border: 0;
   border-radius: 5px;
-  background: #663399;
+  background: #393e46;
   color: var(--white);
   padding: 0.5rem 2rem;
   cursor: pointer;
+  font-family: inherit;
+  transition: 0.2s opacity ease-in-out;
 }
 
 .navbar button:hover {
@@ -56,7 +62,7 @@ body {
 }
 
 .navbar .cl-button {
-  background: transparent;
+  background: #393e46;
   border: 0;
 }
 
@@ -74,6 +80,12 @@ h3 {
 h4 {
   margin: 0;
   text-transform: uppercase;
+}
+
+h1,
+h3,
+h4 {
+  color: var(--black);
 }
 
 .guest {
