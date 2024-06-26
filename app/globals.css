@@ -43,9 +43,14 @@ body {
   background: #393e46;
   color: var(--white);
   padding: 0.5rem 2rem;
+
   cursor: pointer;
   font-family: inherit;
   transition: 0.2s opacity ease-in-out;
+}
+
+.guest button {
+  margin-block-start: 0.5rem;
 }
 
 .navbar button:hover {
