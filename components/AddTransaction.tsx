@@ -1,24 +1,27 @@
 'use client';
-
+import { Fragment, useRef } from 'react';
 import { toast } from 'react-toastify';
 
 import addTransaction from '@/func/addTransaction';
 
 const AddTransaction = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+
   const clientAction = async (formData: FormData) => {
-    const { data, error } = await addTransaction(formData);
+    const { error } = await addTransaction(formData);
 
     if (error) {
       toast.error(error);
     } else {
       toast.success('Transaction added your account.');
+      formRef.current?.reset();
     }
   };
 
   return (
-    <>
+    <Fragment>
       <h3>Add Transaction</h3>
-      <form action={clientAction}>
+      <form action={clientAction} ref={formRef}>
         <div className='form-control'>
           <label htmlFor='name'>Name</label>
           <input
@@ -41,7 +44,7 @@ const AddTransaction = () => {
         </div>
         <button className='button'>Add Transaction</button>
       </form>
-    </>
+    </Fragment>
   );
 };
 

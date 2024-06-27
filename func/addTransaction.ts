@@ -1,9 +1,12 @@
 'use server';
 
+import { revalidatePath } from 'next/cache';
 import { auth } from '@clerk/nextjs/server';
 
+import { database } from '@/lib/database';
+
 interface Transaction {
-  name: string;
+  text: string;
   amount: number;
 }
 
@@ -27,9 +30,21 @@ const addTransaction = async (formData: FormData): Promise<Result> => {
 
   if (!userId) return { error: 'User not found.' };
 
-  const transaction: Transaction = { name, amount };
+  try {
+    const transaction: Transaction = await database.transaction.create({
+      data: {
+        text: name,
+        amount,
+        userId,
+      },
+    });
 
-  return { data: transaction };
+    revalidatePath('/');
+
+    return { data: transaction };
+  } catch (error) {
+    return { error: 'Transaction not added your account.' };
+  }
 };
 
 export default addTransaction;
