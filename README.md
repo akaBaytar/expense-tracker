@@ -11,6 +11,9 @@
 - Prisma
 - Clerk Auth
 
+## Live Demo
+[Vercel Deployment](https://expense-tracker-burakbilgili.vercel.app/)
+
 ## Getting Started
 
 1. Setup your .env file
