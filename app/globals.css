@@ -226,3 +226,15 @@ input[type='number'] {
   opacity: 0.8;
   margin-block: 2rem;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--black);
+}
