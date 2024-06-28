@@ -121,7 +121,6 @@ h4 {
 
 .inc-exp-container > div:first-of-type {
   border-right: 1px solid #dedede;
-  padding-inline-end: 1rem;
 }
 
 .money {
@@ -205,15 +204,16 @@ input[type='number'] {
   background-color: #e74c3c;
   border: 0;
   color: var(--white);
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
   padding: 2px 5px;
   position: absolute;
+  border-radius: 50%;
   top: 50%;
-  left: 0;
+  left: -5px;
   transform: translate(-100%, -50%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
 }
 
 .list li:hover .delete-button {
